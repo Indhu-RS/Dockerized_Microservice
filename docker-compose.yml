@@ -1,0 +1,31 @@
+version: '3'
+
+services:
+  frontend:
+    build:
+      context: ./ecommerce-frontend
+      dockerfile: Dockerfile
+    ports:
+      - "3000:3000"
+    depends_on:
+      - user-management
+      - product-management
+      - order-management
+
+  user-management:
+    build:
+      context: ./user-management
+      dockerfile: Dockerfile
+    # Add additional configuration if needed
+
+  product-management:
+    build:
+      context: ./product-management
+      dockerfile: Dockerfile
+    # Add additional configuration if needed
+
+  order-management:
+    build:
+      context: ./order-management
+      dockerfile: Dockerfile
+    # Add additional configuration if needed
